@@ -36,7 +36,7 @@ export const profile: Profile = {
   headline: ["Data Engineer", "Analytics Engineer", "Data Analytics"],
   intro:
     "I design and build data pipelines, analytics systems, and scalable data infrastructure that transform raw data into reliable, actionable information.",
-  email: "kyalocaleb478@gmail.com",
+  email: "calebkilemba843@gmail.com",
   githubUser: "KilembaCaleb843",
   linkedinUrl: null,
   resumeUrl: null,
