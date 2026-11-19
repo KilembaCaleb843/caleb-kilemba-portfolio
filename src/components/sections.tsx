@@ -245,20 +245,35 @@ export function KnowledgeBase() {
         label="Knowledge_Base"
         meta={` · ${articles.length} articles`}
         title="Writing on practical data problems"
-        lead="Short, plain-language articles on turning everyday business records into decisions."
+        lead={
+          articlesBaseUrl
+            ? "Short, plain-language articles on turning everyday business records into decisions."
+            : "Short, plain-language articles on turning everyday business records into decisions. Full posts are being migrated to this site."
+        }
       />
       <ul className="article-list">
-        {articles.map((a) => (
-          <li key={a.slug}>
-            <a className="article-link" href={`${articlesBaseUrl}/${a.slug}`}>
+        {articles.map((a) => {
+          const body = (
+            <>
               <span className="title">{a.title}</span>
               <span className="summary">{a.summary}</span>
               <span className="meta">
                 {formatDate(a.published)} · {a.readMinutes} min read
               </span>
-            </a>
-          </li>
-        ))}
+            </>
+          );
+          return (
+            <li key={a.slug}>
+              {articlesBaseUrl ? (
+                <a className="article-link" href={`${articlesBaseUrl}/${a.slug}`}>
+                  {body}
+                </a>
+              ) : (
+                <div className="article-link">{body}</div>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </Section>
   );

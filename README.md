@@ -95,7 +95,9 @@ Run `npm test`. The validation tests reject incomplete entries.
 
 ## Writing
 
-Articles are currently linked at their URLs on the previous deployment (`articlesBaseUrl` in `src/content/articles.ts`). **Before replacing the old deployment on the same domain, migrate the posts** (or point `articlesBaseUrl` at their new home). Otherwise those links will 404.
+The 10 articles from the previous site are listed in `src/content/articles.ts`. Their full text has not been migrated yet, so `articlesBaseUrl` is `null` and the cards render without links. Once the posts are published somewhere (e.g. a `/blog` route here, or Medium/dev.to), set `articlesBaseUrl` to that base URL.
+
+Old routes (`/about`, `/projects`, `/contact`, `/blog/*`, `/services`, `/book`) permanently redirect to the matching section (see `next.config.ts`), so existing inbound links keep working.
 
 ## Deployment (Vercel)
 

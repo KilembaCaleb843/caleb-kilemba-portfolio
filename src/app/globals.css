@@ -847,6 +847,11 @@ img {
   box-shadow: var(--shadow);
 }
 
+div.article-link:hover {
+  border-color: var(--border);
+  box-shadow: none;
+}
+
 .article-link .title {
   display: block;
   font-weight: 650;

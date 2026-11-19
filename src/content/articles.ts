@@ -1,9 +1,9 @@
 /**
- * Articles published on the previous version of the site. They are linked
- * at their existing URLs. If the old deployment is replaced, migrate the
- * posts and update `articlesBaseUrl` (see README).
+ * Articles published on the previous version of the site, which has been
+ * replaced. Until the full posts are migrated, cards render without links.
+ * Set `articlesBaseUrl` to the posts' new home to link them again (see README).
  */
-export const articlesBaseUrl = "https://caleb-kilemba-portfolio.vercel.app/blog";
+export const articlesBaseUrl: string | null = null;
 
 export type Article = {
   slug: string;
